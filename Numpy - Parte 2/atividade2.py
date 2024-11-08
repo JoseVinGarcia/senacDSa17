@@ -1,9 +1,11 @@
 # ATIVIDADE 2
 import pandas as pd
 import numpy as np
+import os
 
 # Obter dados
 try:
+    os.system("cls")
     print("Obtendo dados...")
     ENDERECO_DADOS="https://www.ispdados.rj.gov.br/Arquivos/BaseDPEvolucaoMensalCisp.csv"
     
@@ -39,7 +41,7 @@ try:
     print(f"Total de casos de estelionato por mês:\n{df_estelionato_mes.head(12)}\n")
     print(f"Totais de casos gerais de estelionato: {np.sum(array_estelionato)}")
     print(f"Média de casos de estelionato: {media_estelionato:.2f}")
-    print(f"Mediana de casos de estelionato: {mediana_estelionato}")
+    print(f"Mediana de casos de estelionato: {mediana_estelionato:.2f}")
     print(f"Distância entre média e mediana: {dist_estelionato:.2f}%")
     print(f"\nNão há uma distância aceitável para calcularmos um valor médio de casos por mês, nesse caso a média será {mediana_estelionato}.")
 except Exception as e:
